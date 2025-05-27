@@ -1,0 +1,59 @@
+# Create Customer Table
+Create table Customers
+( customer_id int, First_name Varchar(255), Last_name Varchar(255), Age int, country Varchar(255))
+
+-----------------------
+
+# create Orders table
+Create table Orders
+( order_id int, item Varchar(255), amount int, customer_id int)
+
+---------------------------
+
+#Insert records in Customers table
+insert into Customers ( customer_id, First_name, Last_name, Age, country) values (1,'Chanveer','Mathpathi', 34, 'India')
+insert into Customers ( customer_id, First_name, Last_name, Age, country) values (2,'Robert','Luna', 22, 'USA')
+insert into Customers ( customer_id, First_name, Last_name, Age, country) values (3,'David','Robinson', 22, 'UK')
+insert into Customers ( customer_id, First_name, Last_name, Age, country) values (4,'John','Reinhardt', 25, 'UK')
+insert into Customers ( customer_id, First_name, Last_name, Age, country) values (5,'Betty','Doe', 28, 'UAE')
+
+----------------------------------
+
+#Insert records in Orders table
+insert into Orders ( order_id, item, amount, customer_id) values (1,'Keyboard',400, 4)
+insert into Orders ( order_id, item, amount, customer_id) values (2,'Mouse',300, 4)
+insert into Orders ( order_id, item, amount, customer_id) values (3,'Monitor',12000, 3)
+insert into Orders ( order_id, item, amount, customer_id) values (4,'Keyboard',400, 1)
+insert into Orders ( order_id, item, amount, customer_id) values (5,'Mousepad',250, 2)
+
+---------------------------------
+#Fetch the records from table
+
+select * from Customers
+select * from Orders
+
+------------------------------
+
+#Inner join
+
+select Customers.*, Orders.*
+from Customers
+inner join Orders
+on Customers.customer_id=Orders.order_id
+
+--------------
+
+#Right join
+
+select Customers.*, Orders.*
+from Customers
+right join Orders
+on Customers.customer_id=Orders.order_id
+
+--------------
+#Left join
+
+select Customers.*, Orders.*
+from Customers
+left join Orders
+on Customers.customer_id=Orders.order_id

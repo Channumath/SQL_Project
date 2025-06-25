@@ -1,0 +1,67 @@
+select * from tutorial.sat_scores
+
+1) Find the minimum marks in Sat_verbal in the dataset
+select * from tutorial.sat_scores
+select min(sat_verbal) from tutorial.sat_scores
+
+2) Find the Maximun marks in Sat_verbal in the dataset
+select * from tutorial.sat_scores
+select max(sat_writing) from tutorial.sat_scores
+
+3) Find the count of students in the dataset
+select * from tutorial.sat_scores
+select count(student_id) from tutorial.sat_scores 
+
+4)Find the average marksin sat_math in the dataset
+select * from tutorial.sat_scores
+select avg(sat_math) from tutorial.sat_scores
+
+5) Find the sum of hrs_studied in the dataset
+select * from tutorial.sat_scores
+select sum(hrs_studied) from tutorial.sat_scores
+
+6) Find the list of unique school in the data using group by clause
+select * from tutorial.sat_scores
+select school from tutorial.sat_scores 
+group by school
+
+7) Find the list of unique school and teachers in the data using group by clause
+select * from tutorial.sat_scores
+select school, teacher from tutorial.sat_scores 
+group by school, teacher
+
+8) Find the total number of hours studied per school
+select * from tutorial.sat_scores
+select school, sum(hrs_studied) from tutorial.sat_scores group by school
+
+9) Find the number of students in each school
+select * from tutorial.sat_scores
+select DISTINCT school, count(student_id) as students from tutorial.sat_scores group by school
+
+10) Fidn the average marks scored in sat_writing per teacher for the school 'Petersville HS'
+select * from tutorial.sat_scores
+SELECT teacher, avg(sat_writing) from tutorial.sat_scores where school='Petersville HS' group BY teacher
+
+11) Find the maximum marks scored in sat_math per teacher for the school 'Washington HS'
+select * from tutorial.sat_scores
+select teacher, max(sat_math) from tutorial.sat_scores where school= 'Washington HS' group BY teacher
+
+12) Find the list of unique school and teachers in the data using Groups by clause and sort it by ascending order for school 
+and descending order for teacher name
+select * from tutorial.sat_scores
+select school, teacher from tutorial.sat_scores 
+group by school, teacher 
+order by school ASC, teacher DESC
+
+13) Find the list of all teachers along with the minimun marks scored by their students in 
+sat_verbal. Only consider those teachers where minimun marks is more than 220. sort the output in 
+acending oder
+select * from tutorial.sat_scores
+select DISTINCT teacher, student_id, min(sat_verbal) from tutorial.sat_scores where sat_verbal>220 
+group by teacher, student_id
+order by teacher ASC
+
+14) Find the first 5 rows of the DATa
+select * from tutorial.sat_scores LIMIT 5
+
+

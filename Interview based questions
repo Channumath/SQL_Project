@@ -1,0 +1,11 @@
+Query1: 
+
+How to create new table structure based on existing table structure
+-- note ( only schema need to create )
+SELECT * INTO EMPL FROM EMPLOYEE WHERE 1=2
+
+Query2: 
+
+How to create new table based on existing table
+--note ( copy data also from one table to another)
+Select * into EMPL1 from Employee where 1=1
